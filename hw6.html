@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Art</title>
+</head>
+
+<body>
+  <script language="javascript" type="text/javascript">
+    function Art(name, price, small_image) {
+      this.name = name;
+      this.price = price;
+      this.small_image = small_image;
+      //this.large_image = large_image;
+      this.show = alert;
+    }
+    var gallery = new Array();
+    art1 = new Art("Fish Harvest at Dawn", "P52.5 million", "fishharvest.jpg");
+    art2 = new Art("Pista sa Angono", "P30.3 million", "pista.jpg");
+    art3 = new Art("Isadora in Motion", "P37.4 million", "isadora.jpg");
+    art4 = new Art("Lavanderas", "P21.5 million", "lavanderas.jpg");
+    art5 = new Art("Fishermen", "P7.6 million", "fishermen.jpg");
+    gallery.push(art1, art2, art3, art4, art5);
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+  <center>
+    <div class="container">
+      <div class="thumbnail">
+        <image class="art" id="art1"> </img>
+          <div class="info" id="info1"> </div>
+      </div>
+      <div class="thumbnail">
+        <image class="art" id="art2"> </img>
+          <div class="info" id="info2"> </div>
+      </div>
+      <div class="thumbnail">
+        <image class="art" id="art3"> </img>
+          <div class="info" id="info3"> </div>
+      </div>
+      <div class="thumbnail">
+        <image class="art" id="art4"> </img>
+          <div class="info" id="info4"> </div>
+      </div>
+      <div class="thumbnail">
+        <image class="art" id="art5"> </img>
+          <div class="info" id="info5"> </div>
+      </div>
+    </div>
+
+    <div class="enlarged_painting">
+      <img class="large_img" id="large_img"> </img>
+    </div>
+
+  </center>
+  <script type ="text/javascript">
+  $(document).ready(
+
+    $(".thumbnail").hover(
+        function() {
+            $(".large_img").attr("src", $(this).attr("src"));
+            $(".large_img").fadeIn();
+        },
+        function() {
+            $(".large_img").hide();
+        }
+      )
+    )
+  $(document).ready(
+    $("thumbnail").on("click", function()
+    {
+      $(this).children("info").show();
+      $(this).children("info").delay(5000).fadeOut();
+    })
+  )
+
+  </script>
+</body>
+</html>
