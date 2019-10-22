@@ -60,7 +60,7 @@
 
     $(".thumbnail").hover(
         function() {
-            $(".large_img").attr("src", $(this).attr("src"));
+            $(".large_img").attr("src", $(this).attr("small_image"));
             $(".large_img").fadeIn();
         },
         function() {
@@ -69,10 +69,10 @@
       )
     )
   $(document).ready(
-    $("thumbnail").on("click", function()
+    $(".thumbnail").on("click", function()
     {
-      $(this).children("info").show();
-      $(this).children("info").delay(5000).fadeOut();
+      $(this).children(".info").show();
+      $(this).children(".info").delay(5000).fadeOut();
     })
   )
 
